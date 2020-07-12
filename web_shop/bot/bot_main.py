@@ -1,16 +1,16 @@
 from web_shop.bot.webshopbot import WebShopBot
-from web_shop.bot.config import TOKEN
+from web_shop.bot import config
 from web_shop.db.models import Category, Texts, News, Product, Customer, Cart
 from web_shop.bot.keyboard import START_KB, ACCOUNT_KB
 from telebot.types import (KeyboardButton, InlineKeyboardButton, InlineKeyboardMarkup, Update)
 from flask import Flask, request, abort
 from .texts import set_params_text
 
-bot = WebShopBot(TOKEN)
+bot = WebShopBot(config.TOKEN)
 app = Flask(__name__)
 
 
-@app.route('/', methods=['POST'])
+@app.route(config.WEBHOOK_PATH, methods=['POST'])
 def process_webhook():
     if request.headers.get('content-type') == 'application/json':
         json_string = request.get_data().decode('utf-8')
@@ -193,7 +193,7 @@ def set_webhook():
     bot.remove_webhook()
     time.sleep(1)
     bot.set_webhook(
-        url='https://216.250.119.29/tg',
-        certificate=open('web_shop/bot/webhook_cert.pem', 'r')
+        config.WEBHOOK_URL,
+        certificate=open('webhook_cert.pem', 'r')
     )
 
