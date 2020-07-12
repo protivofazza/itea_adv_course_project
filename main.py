@@ -33,8 +33,8 @@ from web_shop.log_writer import log_write, log_clear
 #     app.run(debug=True)
 
 
-log_write("\n\nRESTARTING BOT..\n\n")
-log_write("STARTING LOGGING..")
+# log_write("\n\nRESTARTING BOT..\n\n")
+# log_write("STARTING LOGGING..")
 if is_db_empty():
     generate(category=20, product=46, news=8)
 if not config.DEBUG:
