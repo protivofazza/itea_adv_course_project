@@ -27,6 +27,7 @@ if __name__ == '__main__':
     bot.set_webhook(config.WEBHOOK_URL,
                     certificate=open('webhook_cert.pem', 'r')
                     )
+    app.run(debug=True)
 
 
 # log_write("\n\nRESTARTING BOT..\n\n")
