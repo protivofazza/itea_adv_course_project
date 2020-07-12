@@ -24,10 +24,9 @@ def webhook():
 
 
 if __name__ == '__main__':
-    log_write("\n\nRESTARTING BOT..\n\n")
-    log_write("STARTING LOGGING..")
-    if is_db_empty():
-        generate(category=20, product=46, news=8)
+    import time
+    bot.remove_webhook()
+    time.sleep(1)
     bot.set_webhook(config.WEBHOOK_URL,
                     certificate=open('webhook_cert.pem', 'r')
                     )
