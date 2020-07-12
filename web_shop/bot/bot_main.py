@@ -197,3 +197,6 @@ def set_webhook():
         certificate=open('webhook_cert.pem', 'r')
     )
 
+
+def start_bot():
+    bot.polling()
