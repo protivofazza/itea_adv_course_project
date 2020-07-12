@@ -1,9 +1,9 @@
-from web_shop.bot.bot_main import bot  # , app, set_webhook
-# from web_shop.db.seeder import seed, generate
+from web_shop.bot.bot_main import bot, set_webhook, app
+from web_shop.db.seeder import seed, generate
 from web_shop.bot import config
-# from web_shop.db.models import is_db_empty
-# from web_shop.api.api_main import start as startAPI
-# from web_shop.log_writer import log_write, log_clear
+from web_shop.db.models import is_db_empty
+from web_shop.api.api_main import start as startAPI
+from web_shop.log_writer import log_write, log_clear
 
 from flask import Flask, request, abort
 from telebot.types import Update
@@ -24,13 +24,15 @@ def webhook():
 
 
 if __name__ == '__main__':
-    import time
-    bot.remove_webhook()
-    time.sleep(1)
-    bot.set_webhook(url=config.WEBHOOK_URL,
-                    certificate=open('webhook_cert.pem', 'r')
-                    )
+    set_webhook()
+    # import time
+    # bot.remove_webhook()
+    # time.sleep(1)
+    # bot.set_webhook(url=config.WEBHOOK_URL,
+    #                 certificate=open('webhook_cert.pem', 'r')
+    #                 )
     app.run(debug=True, port=8000)
+    startAPI()
 
 
 # log_write("\n\nRESTARTING BOT..\n\n")

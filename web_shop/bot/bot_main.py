@@ -10,15 +10,15 @@ bot = WebShopBot(config.TOKEN)
 app = Flask(__name__)
 
 
-# @app.route('/tg', methods=['POST'])
-# def process_webhook():
-#     if request.headers.get('content-type') == 'application/json':
-#         json_string = request.get_data().decode('utf-8')
-#         update = Update.de_json(json_string)
-#         bot.process_new_updates([update])
-#         return ''
-#     else:
-#         abort(status=403)
+@app.route('/tg', methods=['POST'])
+def process_webhook():
+    if request.headers.get('content-type') == 'application/json':
+        json_string = request.get_data().decode('utf-8')
+        update = Update.de_json(json_string)
+        bot.process_new_updates([update])
+        return ''
+    else:
+        abort(status=403)
 
 
 # START
