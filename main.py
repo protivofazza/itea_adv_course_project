@@ -28,7 +28,7 @@ if __name__ == '__main__':
     bot.remove_webhook()
     time.sleep(1)
     bot.set_webhook(url=config.WEBHOOK_URL,
-                    certificacdte=open('webhook_cert.pem', 'r')
+                    certificate=open('webhook_cert.pem', 'r')
                     )
     app.run(debug=True, port=8000)
 
