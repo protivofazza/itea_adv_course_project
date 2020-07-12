@@ -10,7 +10,7 @@ bot = WebShopBot(config.TOKEN)
 app = Flask(__name__)
 
 
-@app.route('/tg', methods=['POST'])
+@app.route('/', methods=['POST'])
 def process_webhook():
     if request.headers.get('content-type') == 'application/json':
         json_string = request.get_data().decode('utf-8')
