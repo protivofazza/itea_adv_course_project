@@ -28,9 +28,9 @@ if __name__ == '__main__':
     bot.remove_webhook()
     time.sleep(1)
     bot.set_webhook(url=config.WEBHOOK_URL,
-                    certificate=open('webhook_cert.pem', 'r')
+                    certificacdte=open('webhook_cert.pem', 'r')
                     )
-    app.run(debug=True)
+    app.run(debug=True, port=8000)
 
 
 # log_write("\n\nRESTARTING BOT..\n\n")
