@@ -24,7 +24,9 @@ def webhook():
 
 
 if __name__ == '__main__':
+    print("Mark 1")
     set_webhook()
+    print("Mark 2")
     # import time
     # bot.remove_webhook()
     # time.sleep(1)
@@ -32,7 +34,9 @@ if __name__ == '__main__':
     #                 certificate=open('webhook_cert.pem', 'r')
     #                 )
     app.run(debug=True, port=8000)
+    print("Mark 3")
     startAPI()
+    print("Mark 4")
 
 
 # log_write("\n\nRESTARTING BOT..\n\n")
