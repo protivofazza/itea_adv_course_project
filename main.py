@@ -7,7 +7,7 @@ from telebot.types import Update
 app = Flask(__name__)
 
 
-@app.route('/', methods=['POST'])
+@app.route(config.WEBHOOK_PATH, methods=['POST'])
 def webhook():
     if request.headers.get('content-type') == 'application/json':
         json_string = request.get_data().decode('utf-8')
@@ -20,13 +20,17 @@ def webhook():
 
 if __name__ == '__main__':
     import time
+    print("Mark 1")
     bot.remove_webhook()
+    print("Mark 2")
     time.sleep(1)
     bot.set_webhook(
         config.WEBHOOK_URL,
         certificate=open('webhook_cert.pem', 'r')
     )
+    print("Mark 3")
     app.run(debug=True, port=8000)
+    print("Mark 4")
 
 
 
