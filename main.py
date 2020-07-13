@@ -26,7 +26,7 @@ if __name__ == '__main__':
         config.WEBHOOK_URL,
         certificate=open('webhook_cert.pem', 'r')
     )
-    app.run(debug=True, port=8000)
+    app.run(debug=True)
 
 
 # from web_shop.bot.bot_main import bot, set_webhook, app
