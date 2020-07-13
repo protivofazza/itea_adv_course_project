@@ -4,7 +4,8 @@ from typing import Tuple
 
 
 # me.connect('webshop_db_test_01')
-me.connect('webshop_db')
+# me.connect('webshop_db')
+me.connect('webshop_db_v2')
 
 ValidationError = me.ValidationError
 NotUniqueError = me.NotUniqueError
