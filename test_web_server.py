@@ -10,4 +10,4 @@ def test():
     return str(random.randint(0, 100))
 
 
-app.run(debug=True, port=8000)
+app.run(debug=True)
