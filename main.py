@@ -19,6 +19,7 @@ if __name__ == '__main__':
         log_write("WEBHOOK SET SUCCESSFULLY")
         log_write("STARTING SERVER")
         app.run(debug=True)
+        print("Mark test: everything started")
     else:
         startAPI()
         print("Mark 1: startAPI() success")
