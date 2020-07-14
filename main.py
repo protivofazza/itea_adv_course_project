@@ -6,26 +6,27 @@ from web_shop.api.api_main import start as startAPI
 from web_shop.log_writer import log_write, log_clear
 
 
-log_write("\n\nRESTARTING BOT..\n\n")
-log_write("STARTING LOGGING..")
-if is_db_empty():
-    generate(category=20, product=46, news=8)
-if not DEBUG:
-    log_write("STARTING API")
-    startAPI()
-    log_write("API STARTED SUCCESSFULLY")
-    set_webhook()
-    log_write("WEBHOOK SET SUCCESSFULLY")
-    log_write("STARTING SERVER")
-    app.run(debug=True)
-else:
-    startAPI()
-    print("Mark 1: startAPI() success")
-    log_write("API STARTED SUCCESSFULLY")
-    app.run(debug=True)
-    print("Mark 2: app.run(port=8000)")
-    bot.polling()
-    print("Mark 3: bot.polling() success")
+if __name__ == '__main__':
+    log_write("\n\nRESTARTING BOT..\n\n")
+    log_write("STARTING LOGGING..")
+    if is_db_empty():
+        generate(category=20, product=46, news=8)
+    if not DEBUG:
+        log_write("STARTING API")
+        startAPI()
+        log_write("API STARTED SUCCESSFULLY")
+        set_webhook()
+        log_write("WEBHOOK SET SUCCESSFULLY")
+        log_write("STARTING SERVER")
+        app.run(debug=True)
+    else:
+        startAPI()
+        print("Mark 1: startAPI() success")
+        log_write("API STARTED SUCCESSFULLY")
+        app.run(debug=True)
+        print("Mark 2: app.run(debug=True0)")
+        bot.polling()
+        print("Mark 3: bot.polling() success")
 
 
 # from web_shop.bot.bot_main import start_bot, bot
