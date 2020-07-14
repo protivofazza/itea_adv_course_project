@@ -10,5 +10,5 @@ def start():
                      '/customer/<customer_id>/<property_name>')
     api.add_resource(CartResource, '/cart', '/cart/<cart_id>')
     api.add_resource(ProductResource, '/product', '/product/<product_id>')
-    api.add_resource(TextsResource, '/texts', '/texts/<text_id>')
+    api.add_resource(TextsResource, '/tg/texts', '/texts/<text_id>')
     api.add_resource(NewsResource, '/news', '/news/<news_id>')
