@@ -5,10 +5,10 @@ from .resources import CategoryResource, CartResource, CustomerResource, NewsRes
 
 def start():
     api = Api(app)
-    api.add_resource(CategoryResource, '/category', '/category/<category_id>')
-    api.add_resource(CustomerResource, '/customer', '/customer/<customer_id>',
-                     '/customer/<customer_id>/<property_name>')
-    api.add_resource(CartResource, '/cart', '/cart/<cart_id>')
-    api.add_resource(ProductResource, '/product', '/product/<product_id>')
-    api.add_resource(TextsResource, '/tg/texts', '/texts/<text_id>')
-    api.add_resource(NewsResource, '/news', '/news/<news_id>')
+    api.add_resource(CategoryResource, '/tg/category', '/tg/category/<category_id>')
+    api.add_resource(CustomerResource, '/tg/customer', '/tg/customer/<customer_id>',
+                     '/tg/customer/<customer_id>/<property_name>')
+    api.add_resource(CartResource, '/tg/cart', '/tg/cart/<cart_id>')
+    api.add_resource(ProductResource, '/tg/product', '/tg/product/<product_id>')
+    api.add_resource(TextsResource, '/tg/texts', '/tg/texts/<text_id>')
+    api.add_resource(NewsResource, '/tg/news', '/tg/news/<news_id>')
