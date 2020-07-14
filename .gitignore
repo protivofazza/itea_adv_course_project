@@ -1,3 +1,5 @@
 venv/
 .idea/
 *.pyc
+logs.txt
+web_shop/bot/config.py
